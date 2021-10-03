@@ -6,9 +6,9 @@ using UnityEngine;
 class Nuclee : MonoBehaviour, IPoolable
 {
     public event EventHandler OnUnstableEventHandler;
-    public event EventHandler OnGrowEventHandler;
-    public event EventHandler<OnExplodeEventArgs> OnExplodeEventHandler;
+    public event EventHandler<OnExplodeEventArgs> OnGrowEventHandler;
 
+    public event EventHandler<OnExplodeEventArgs> OnExplodeEventHandler;
     public class OnExplodeEventArgs : EventArgs
     {
         public float NucleeMass;
@@ -96,7 +96,7 @@ class Nuclee : MonoBehaviour, IPoolable
         if(!_isUnstable)
         {
             _curTime = _halfLifeTime;
-            OnGrowEventHandler?.Invoke(this, EventArgs.Empty);
+            OnGrowEventHandler?.Invoke(this, new OnExplodeEventArgs { NucleeMass = _mass });
         }
     }
 
