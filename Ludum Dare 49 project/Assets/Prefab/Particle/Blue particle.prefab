@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1953368992998213349}
   - component: {fileID: -4705135969185947290}
   m_Layer: 0
-  m_Name: Particle 2
+  m_Name: Blue particle
   m_TagString: Particle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

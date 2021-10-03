@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ class Nuclee : MonoBehaviour, IPoolable
     [SerializeField] private float _halfLifeTime;
     private float _curTime;
 
+    private NucleeData _nucleeData;
+
     public bool IsUnstable
     {
         set => _isUnstable = value;
@@ -32,6 +35,7 @@ class Nuclee : MonoBehaviour, IPoolable
     private void Start()
     {
         _curTime = _halfLifeTime;
+
     }
 
     private void Update()

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baa50534d72904f4d8665866b532fc78, type: 3}
-  m_Name: NucleeVar2
+  m_Name: PinkNuclee
   m_EditorClassIdentifier: 
   _sprites:
-  - {fileID: 17040872865489889, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
-  - {fileID: 1885687703347760039, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
-  - {fileID: -784274438733566474, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
+  - {fileID: 4466262460861561889, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  - {fileID: -1840876054242425426, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  - {fileID: -130938837918172397, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  _particlePrefab: {fileID: 7846561045913553510, guid: 874c8936062a15c41946365caec717b5, type: 3}

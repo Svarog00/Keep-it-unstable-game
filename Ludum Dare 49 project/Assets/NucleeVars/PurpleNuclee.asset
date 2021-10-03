@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baa50534d72904f4d8665866b532fc78, type: 3}
-  m_Name: NucleeVar4
+  m_Name: PurpleNuclee
   m_EditorClassIdentifier: 
   _sprites:
-  - {fileID: 1548118467965610529, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
-  - {fileID: 4140171824535173385, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
-  - {fileID: -7886989918179425895, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
+  - {fileID: 3805613331153746676, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  - {fileID: 8876179390908006248, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  - {fileID: 427967565369849261, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  _particlePrefab: {fileID: 7846561045913553510, guid: e038e28346b1cfc4599ef237b7cb11d6, type: 3}

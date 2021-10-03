@@ -7,7 +7,7 @@ namespace Assets.Scripts
     public class NucleeData : ScriptableObject
     {
         [SerializeField] private List<Sprite> _sprites;
-        [SerializeField] private GameObject gameObject;
+        [SerializeField] private GameObject _particlePrefab;
 
     }
 }

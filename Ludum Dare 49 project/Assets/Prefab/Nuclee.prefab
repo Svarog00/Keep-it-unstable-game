@@ -49,10 +49,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReactionController: {fileID: 0}
-  _particlePrefab: {fileID: 7846561045913553510, guid: 874c8936062a15c41946365caec717b5, type: 3}
+  _particlePrefab: {fileID: 7846561045913553510, guid: bc6be8f1bb7d05b4da9f793bf4eef88b, type: 3}
   _isUnstable: 0
   _mass: 5
-  _halfLifeTime: 2.5
+  _halfLifeTime: 2
 --- !u!114 &5578047230653318303
 MonoBehaviour:
   m_ObjectHideFlags: 0

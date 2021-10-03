@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baa50534d72904f4d8665866b532fc78, type: 3}
-  m_Name: NucleeVar3
+  m_Name: OrangeNuclee
   m_EditorClassIdentifier: 
   _sprites:
-  - {fileID: -910639822357429433, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
-  - {fileID: 8728110190743704768, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
-  - {fileID: 8434595584733699845, guid: 348c7f1b9b0588741b4ca89e49924ab0, type: 3}
+  - {fileID: 2253674022972301127, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  - {fileID: 5943796011138808681, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  - {fileID: -3205217340427785193, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
+  _particlePrefab: {fileID: 7846561045913553510, guid: bc6be8f1bb7d05b4da9f793bf4eef88b, type: 3}
