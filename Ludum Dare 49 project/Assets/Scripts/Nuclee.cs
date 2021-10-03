@@ -6,6 +6,7 @@ using UnityEngine;
 class Nuclee : MonoBehaviour, IPoolable
 {
     public event EventHandler OnUnstableEventHandler;
+    public event EventHandler OnGrowEventHandler;
     public event EventHandler<OnExplodeEventArgs> OnExplodeEventHandler;
 
     public class OnExplodeEventArgs : EventArgs
@@ -67,13 +68,13 @@ class Nuclee : MonoBehaviour, IPoolable
         if(rnd < 50 && _isUnstable == false)
         {
             _isUnstable = true;
-            Debug.Log($"Unstable!!!! {gameObject}");
+            Debug.Log($"Unstable!!!!");
             OnUnstableEventHandler?.Invoke(this, EventArgs.Empty);
         }
         else
         {
             _curTime = _halfLifeTime;
-            Debug.Log($"Stable. {gameObject}");
+            Debug.Log($"Stable.");
         }
     }
 
@@ -83,7 +84,7 @@ class Nuclee : MonoBehaviour, IPoolable
         {
             GenerateParticles();
             CameraShake.Instance.ShakeCamera(_mass, 0.4f);
-            ReactionController.RefreshTimer();
+            ReactionController.RefreshTimer(_mass);
             OnExplodeEventHandler?.Invoke(this, new OnExplodeEventArgs { NucleeMass = _mass });
             ReturnToPool();
         }
@@ -95,6 +96,7 @@ class Nuclee : MonoBehaviour, IPoolable
         if(!_isUnstable)
         {
             _curTime = _halfLifeTime;
+            OnGrowEventHandler?.Invoke(this, EventArgs.Empty);
         }
     }
 

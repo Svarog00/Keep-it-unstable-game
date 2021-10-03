@@ -9,6 +9,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField] ReactionController _reactionController;
 
     private ObjectPool _objectPool;
+
     private float _verticalUpBorder;
     private float _verticalDownBorder;
     private float _horizontalRightBorder;

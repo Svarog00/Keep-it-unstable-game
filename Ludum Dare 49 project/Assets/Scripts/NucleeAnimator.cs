@@ -11,9 +11,16 @@ public class NucleeAnimator : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+
         _nuclee = GetComponent<Nuclee>();
         _nuclee.OnUnstableEventHandler += _nuclee_OnUnstableEventHandler;
         _nuclee.OnExplodeEventHandler += _nuclee_OnExplodeEventHandler;
+        _nuclee.OnGrowEventHandler += _nuclee_OnGrowEventHandler;
+    }
+
+    private void _nuclee_OnGrowEventHandler(object sender, System.EventArgs e)
+    {
+        throw new System.NotImplementedException();
     }
 
     private void _nuclee_OnExplodeEventHandler(object sender, Nuclee.OnExplodeEventArgs e)

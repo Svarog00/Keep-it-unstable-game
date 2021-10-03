@@ -28,10 +28,14 @@ public class ReactionController : MonoBehaviour
             _curTime -= Time.deltaTime;
             OnTimeRefreshEventHandler?.Invoke(this, new OnTimeRefreshEventArgs { Time = _curTime });
         }
+        else
+        {
+            
+        }
     }
 
-    public void RefreshTimer()
+    public void RefreshTimer(int mass)
     {
-        _curTime = _time;
+        _curTime += mass;
     }
 }

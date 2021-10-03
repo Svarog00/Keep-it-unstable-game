@@ -9,7 +9,6 @@ class Timer : MonoBehaviour
 
     public Action Action
     {
-        private get => _onTimeAction;
         set => _onTimeAction = value;
     }
 
