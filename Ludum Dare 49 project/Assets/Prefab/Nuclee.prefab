@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9051663251541982581}
   - component: {fileID: 9051663251541982580}
   - component: {fileID: 5578047230653318303}
-  - component: {fileID: 6416502367101427218}
+  - component: {fileID: 4498698791309975961}
   - component: {fileID: 9051663251541982582}
   - component: {fileID: 9051663251541982579}
   - component: {fileID: 7823499438690564790}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReactionController: {fileID: 0}
+  _nucleeVariants: {fileID: 11400000, guid: 363f7a7cf3fd9b04f9ac1ffcb6c7d71e, type: 2}
   _particlePrefab: {fileID: 7846561045913553510, guid: bc6be8f1bb7d05b4da9f793bf4eef88b, type: 3}
   _isUnstable: 0
   _mass: 5
@@ -66,25 +67,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nuclee: {fileID: 9051663251541982580}
---- !u!95 &6416502367101427218
-Animator:
-  serializedVersion: 3
+--- !u!114 &4498698791309975961
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051663251541982578}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2511fd908fe50a74f8642ae6788a7628, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bbe39c9a3a4584dab4b1ca026e41af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nucleeModel: {fileID: 9051663251541982580}
+  _curSprite: {fileID: 9051663251541982582}
 --- !u!212 &9051663251541982582
 SpriteRenderer:
   m_ObjectHideFlags: 0

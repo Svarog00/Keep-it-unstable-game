@@ -18,24 +18,42 @@ class Nuclee : MonoBehaviour, IPoolable
     public ReactionController ReactionController;
 
     private ObjectPool _objectPool;
+    private NucleeData _nucleeData;
+
+    private float _curTime;
+
+    [SerializeField] private NucleeVariants _nucleeVariants;
     [SerializeField] private GameObject _particlePrefab;
 
     [SerializeField] private bool _isUnstable;
     [SerializeField] private int _mass;
     [SerializeField] private float _halfLifeTime;
-    private float _curTime;
 
-    private NucleeData _nucleeData;
 
     public bool IsUnstable
     {
         set => _isUnstable = value;
     }
 
-    private void Start()
+    public NucleeData NucleeData
+    {
+        get => _nucleeData;
+        set => _nucleeData = value;
+    }
+
+    private void Awake()
     {
         _curTime = _halfLifeTime;
+        _nucleeData = _nucleeVariants.GetRandomVariant();
+        _nucleeData = Instantiate(_nucleeData);
+        _particlePrefab = _nucleeData.ParticlePrefab;
+        _mass = UnityEngine.Random.Range(1, 7);
+    }
 
+    private void OnEnable()
+    {
+        _mass = UnityEngine.Random.Range(1, 7);
+        OnGrowEventHandler?.Invoke(this, new OnExplodeEventArgs { NucleeMass = _mass });
     }
 
     private void Update()
@@ -86,11 +104,11 @@ class Nuclee : MonoBehaviour, IPoolable
     {
         if(_isUnstable)
         {
+            ReturnToPool();
             GenerateParticles();
             CameraShake.Instance.ShakeCamera(_mass, 0.4f);
             ReactionController.RefreshTimer(_mass);
             OnExplodeEventHandler?.Invoke(this, new OnExplodeEventArgs { NucleeMass = _mass });
-            ReturnToPool();
         }
     }
 
@@ -106,7 +124,7 @@ class Nuclee : MonoBehaviour, IPoolable
 
     private void GenerateParticles()
     {
-        for(int i = 0; i < _mass; i++)
+        for (int i = 0; i < _mass; i++)
         {
             GameObject particle = Instantiate(_particlePrefab);
             particle.transform.position = transform.position;

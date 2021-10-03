@@ -10,6 +10,7 @@ public class ReactionController : MonoBehaviour
     {
         public float Time;
     }
+    public event EventHandler OnNucleeExploded;
 
     [SerializeField] private float _time;
     private float _curTime;
@@ -36,6 +37,7 @@ public class ReactionController : MonoBehaviour
 
     public void RefreshTimer(int mass)
     {
-        _curTime += mass;
+        _curTime += mass/2;
+        OnNucleeExploded?.Invoke(this, EventArgs.Empty);
     }
 }

@@ -137,6 +137,15 @@ TextureImporter:
   - first:
       213: -3635730701412241589
     second: AtomsExplode_44
+  - first:
+      213: 4571120852997475668
+    second: AtomsExplode_45
+  - first:
+      213: 3564784244491612053
+    second: AtomsExplode_46
+  - first:
+      213: -5980510113182233310
+    second: AtomsExplode_47
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -544,8 +553,8 @@ TextureImporter:
       name: AtomsExplode_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 480
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -565,7 +574,7 @@ TextureImporter:
       name: AtomsExplode_16
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 32
         width: 32
         height: 32
@@ -586,7 +595,7 @@ TextureImporter:
       name: AtomsExplode_17
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 32
         width: 32
         height: 32
@@ -607,7 +616,7 @@ TextureImporter:
       name: AtomsExplode_18
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 32
         width: 32
         height: 32
@@ -628,7 +637,7 @@ TextureImporter:
       name: AtomsExplode_19
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 32
         width: 32
         height: 32
@@ -649,7 +658,7 @@ TextureImporter:
       name: AtomsExplode_20
       rect:
         serializedVersion: 2
-        x: 160
+        x: 128
         y: 32
         width: 32
         height: 32
@@ -670,7 +679,7 @@ TextureImporter:
       name: AtomsExplode_21
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 32
         width: 32
         height: 32
@@ -691,7 +700,7 @@ TextureImporter:
       name: AtomsExplode_22
       rect:
         serializedVersion: 2
-        x: 224
+        x: 192
         y: 32
         width: 32
         height: 32
@@ -712,7 +721,7 @@ TextureImporter:
       name: AtomsExplode_23
       rect:
         serializedVersion: 2
-        x: 256
+        x: 224
         y: 32
         width: 32
         height: 32
@@ -733,7 +742,7 @@ TextureImporter:
       name: AtomsExplode_24
       rect:
         serializedVersion: 2
-        x: 288
+        x: 256
         y: 32
         width: 32
         height: 32
@@ -754,7 +763,7 @@ TextureImporter:
       name: AtomsExplode_25
       rect:
         serializedVersion: 2
-        x: 320
+        x: 288
         y: 32
         width: 32
         height: 32
@@ -775,7 +784,7 @@ TextureImporter:
       name: AtomsExplode_26
       rect:
         serializedVersion: 2
-        x: 352
+        x: 320
         y: 32
         width: 32
         height: 32
@@ -796,7 +805,7 @@ TextureImporter:
       name: AtomsExplode_27
       rect:
         serializedVersion: 2
-        x: 384
+        x: 352
         y: 32
         width: 32
         height: 32
@@ -817,7 +826,7 @@ TextureImporter:
       name: AtomsExplode_28
       rect:
         serializedVersion: 2
-        x: 416
+        x: 384
         y: 32
         width: 32
         height: 32
@@ -838,7 +847,7 @@ TextureImporter:
       name: AtomsExplode_29
       rect:
         serializedVersion: 2
-        x: 448
+        x: 416
         y: 32
         width: 32
         height: 32
@@ -859,8 +868,8 @@ TextureImporter:
       name: AtomsExplode_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 448
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -880,8 +889,8 @@ TextureImporter:
       name: AtomsExplode_31
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 480
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -901,7 +910,7 @@ TextureImporter:
       name: AtomsExplode_32
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 0
         width: 32
         height: 32
@@ -922,7 +931,7 @@ TextureImporter:
       name: AtomsExplode_33
       rect:
         serializedVersion: 2
-        x: 96
+        x: 32
         y: 0
         width: 32
         height: 32
@@ -943,7 +952,7 @@ TextureImporter:
       name: AtomsExplode_34
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 0
         width: 32
         height: 32
@@ -964,7 +973,7 @@ TextureImporter:
       name: AtomsExplode_35
       rect:
         serializedVersion: 2
-        x: 160
+        x: 96
         y: 0
         width: 32
         height: 32
@@ -985,7 +994,7 @@ TextureImporter:
       name: AtomsExplode_36
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 0
         width: 32
         height: 32
@@ -1006,7 +1015,7 @@ TextureImporter:
       name: AtomsExplode_37
       rect:
         serializedVersion: 2
-        x: 224
+        x: 160
         y: 0
         width: 32
         height: 32
@@ -1027,7 +1036,7 @@ TextureImporter:
       name: AtomsExplode_38
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 0
         width: 32
         height: 32
@@ -1048,7 +1057,7 @@ TextureImporter:
       name: AtomsExplode_39
       rect:
         serializedVersion: 2
-        x: 288
+        x: 224
         y: 0
         width: 32
         height: 32
@@ -1069,7 +1078,7 @@ TextureImporter:
       name: AtomsExplode_40
       rect:
         serializedVersion: 2
-        x: 320
+        x: 256
         y: 0
         width: 32
         height: 32
@@ -1090,7 +1099,7 @@ TextureImporter:
       name: AtomsExplode_41
       rect:
         serializedVersion: 2
-        x: 352
+        x: 288
         y: 0
         width: 32
         height: 32
@@ -1111,7 +1120,7 @@ TextureImporter:
       name: AtomsExplode_42
       rect:
         serializedVersion: 2
-        x: 384
+        x: 320
         y: 0
         width: 32
         height: 32
@@ -1132,7 +1141,7 @@ TextureImporter:
       name: AtomsExplode_43
       rect:
         serializedVersion: 2
-        x: 416
+        x: 352
         y: 0
         width: 32
         height: 32
@@ -1153,7 +1162,7 @@ TextureImporter:
       name: AtomsExplode_44
       rect:
         serializedVersion: 2
-        x: 448
+        x: 384
         y: 0
         width: 32
         height: 32
@@ -1166,6 +1175,69 @@ TextureImporter:
       bones: []
       spriteID: b4f6753a03a4b8dc0800000000000000
       internalID: -3635730701412241589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtomsExplode_45
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d8b4c6232ef6f30800000000000000
+      internalID: 4571120852997475668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtomsExplode_46
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fe4d12268a87130800000000000000
+      internalID: 3564784244491612053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtomsExplode_47
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d4428fcb5f00da0800000000000000
+      internalID: -5980510113182233310
       vertices: []
       indices: 
       edges: []
