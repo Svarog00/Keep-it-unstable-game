@@ -13,7 +13,14 @@ public class TimerTextHandler : MonoBehaviour
     {
         _textField = GetComponent<TMP_Text>();
         _reactionController.OnTimeRefreshEventHandler += _reactionController_OnTimeRefreshEventHandler;
+        _reactionController.OnLoseEventHandler += _reactionController_OnLoseEventHandler;
     }
+
+    private void _reactionController_OnLoseEventHandler(object sender, System.EventArgs e)
+    {
+        _textField.text = "";
+    }
+
 
     private void _reactionController_OnTimeRefreshEventHandler(object sender, ReactionController.OnTimeRefreshEventArgs e)
     {

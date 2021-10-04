@@ -131,6 +131,7 @@ class Nuclee : MonoBehaviour, IPoolable
                 ReactionController.RefreshTimer(_mass);
             }
             OnExplodeEventHandler?.Invoke(this, new OnExplodeEventArgs { NucleeMass = _mass });
+            FindObjectOfType<AudioManager>().Play("NucleeExplode");
         }
     }
 
@@ -140,6 +141,7 @@ class Nuclee : MonoBehaviour, IPoolable
         if(!_isUnstable)
         {
             _curTime = _halfLifeTime;
+            FindObjectOfType<AudioManager>().Play("NucleeGrow");
             OnGrowEventHandler?.Invoke(this, new OnExplodeEventArgs { NucleeMass = _mass });
         }
     }

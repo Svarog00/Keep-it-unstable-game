@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
@@ -17,5 +18,10 @@ public class EndScreen : MonoBehaviour
     private void _reactionController_OnLoseEventHandler(object sender, System.EventArgs e)
     {
         _visual.SetActive(true);
+    }
+
+    public void StartAgain()
+    {
+        SceneManager.LoadScene(0);
     }
 }
