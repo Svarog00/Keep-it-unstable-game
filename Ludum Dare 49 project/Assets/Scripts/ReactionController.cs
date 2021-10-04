@@ -14,6 +14,7 @@ public class ReactionController : MonoBehaviour
     public class OnNucleeExplodedEventArgs : EventArgs
     {
         public int Score;
+        public float TimeCoeff;
     }
     public event EventHandler OnLoseEventHandler;
 
@@ -55,6 +56,6 @@ public class ReactionController : MonoBehaviour
             _prevScore = _curScore;
             _timeCoeff += _timeMultiplier;
         }
-        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = _curScore });    
+        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = _curScore, TimeCoeff = _timeCoeff });    
     }
 }

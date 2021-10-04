@@ -125,7 +125,7 @@ class Nuclee : MonoBehaviour, IPoolable
             }
 
             GenerateParticles();
-            CameraShake.Instance.ShakeCamera(_mass, 0.4f);
+            CameraShake.Instance.ShakeCamera(_mass/1.5f, 0.4f);
             if(ReactionController != null)
             {
                 ReactionController.RefreshTimer(_mass);
@@ -137,7 +137,11 @@ class Nuclee : MonoBehaviour, IPoolable
 
     private void Grow()
     {
-        _mass++;
+        if(_mass < 31)
+        {
+            _mass++;
+        }
+
         if(!_isUnstable)
         {
             _curTime = _halfLifeTime;

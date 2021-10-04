@@ -7,9 +7,11 @@ public class SpawnController : MonoBehaviour
 {
     [SerializeField] private float _delayTime;
     [SerializeField] private float _time;
-    [SerializeField] private int _count;
-    [SerializeField] ReactionController _reactionController;
+    [SerializeField] private int _initCount;
+    [SerializeField] private ReactionController _reactionController;
 
+    private int _count;
+    private float _timeCoeff;
     private float _curTime;
 
     private ObjectPool _objectPool;
@@ -30,7 +32,17 @@ public class SpawnController : MonoBehaviour
         _horizontalLeftBorder = Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x;
 
         _objectPool = GetComponent<ObjectPool>();
+        _count = _initCount + 10;
         StartCoroutine(SpawnOnTime());
+    }
+
+    private void _reactionController_OnNucleeExploded(object sender, ReactionController.OnNucleeExplodedEventArgs e)
+    {
+        if(_count < 40)
+        {
+            _count++;
+        }
+        _timeCoeff = e.TimeCoeff;
     }
 
     private void Update()
@@ -47,15 +59,7 @@ public class SpawnController : MonoBehaviour
         }
         else
         {
-            _curTime -= Time.fixedDeltaTime;
-        }
-    }
-
-    private void _reactionController_OnNucleeExploded(object sender, System.EventArgs e)
-    {
-        if(_count <= 20)
-        {
-            _count++;
+            _curTime -= Time.deltaTime * _timeCoeff;
         }
     }
 
@@ -75,10 +79,12 @@ public class SpawnController : MonoBehaviour
 
     private IEnumerator SpawnOnTime()
     {
-        while(_count > 0)
+        while(_initCount > 0)
         {
             SpawnNuclee();
+            _initCount--;
             yield return new WaitForSeconds(_time);
         }
+        _curTime = _delayTime;
     }
 }
