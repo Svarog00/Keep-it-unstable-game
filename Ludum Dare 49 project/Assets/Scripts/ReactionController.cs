@@ -15,11 +15,15 @@ public class ReactionController : MonoBehaviour
     {
         public int Score;
     }
+    public event EventHandler OnLoseEventHandler;
+
 
     [SerializeField] private float _time;
-    private int _score;
+    private int _curScore = 0;
+    private int _prevScore = 0;
     private float _curTime;
-    private float k = 1;
+    private float _timeCoeff = 1;
+    [SerializeField] private float _timeMultiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -32,23 +36,25 @@ public class ReactionController : MonoBehaviour
     {
         if(_curTime > 0)
         {
-            _curTime -= Time.deltaTime * k;
+            _curTime -= Time.deltaTime * _timeCoeff;
             OnTimeRefreshEventHandler?.Invoke(this, new OnTimeRefreshEventArgs { Time = _curTime });
         }
         else
         {
-            
+            OnLoseEventHandler?.Invoke(this, EventArgs.Empty);
+            gameObject.SetActive(false);
         }
     }
 
     public void RefreshTimer(int mass)
     {
         _curTime += mass/3;
-        _score += mass;
-        if(_score % 100 == 0)
+        _curScore += mass;
+        if(_curScore > 100 || _curScore - _prevScore >= 100)
         {
-            k += 0.5f;
+            _prevScore = _curScore;
+            _timeCoeff += _timeMultiplier;
         }
-        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = _score });    
+        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = _curScore });    
     }
 }

@@ -7,7 +7,6 @@ public class ScoreTextHandler : MonoBehaviour
 {
     [SerializeField] private ReactionController _reactionController;
     private TMP_Text _textField;
-    private int _score = 0;
 
     private void Start()
     {

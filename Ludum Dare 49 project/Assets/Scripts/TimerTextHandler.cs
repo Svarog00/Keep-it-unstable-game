@@ -18,5 +18,13 @@ public class TimerTextHandler : MonoBehaviour
     private void _reactionController_OnTimeRefreshEventHandler(object sender, ReactionController.OnTimeRefreshEventArgs e)
     {
         _textField.text = e.Time.ToString("0.00");
+        if(e.Time < 5f)
+        {
+            _textField.color = Color.red;
+        }
+        else
+        {
+            _textField.color = Color.green;
+        }
     }
 }
