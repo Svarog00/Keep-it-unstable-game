@@ -125,7 +125,7 @@ class Nuclee : MonoBehaviour, IPoolable
             }
 
             GenerateParticles();
-            CameraShake.Instance.ShakeCamera(_mass, 0.4f);
+            CameraShake.Instance.ShakeCamera(_mass/1.5f, 0.4f);
             if(ReactionController != null)
             {
                 ReactionController.RefreshTimer(_mass);
