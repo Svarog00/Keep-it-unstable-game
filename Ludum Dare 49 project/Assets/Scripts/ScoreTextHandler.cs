@@ -7,15 +7,16 @@ public class ScoreTextHandler : MonoBehaviour
 {
     [SerializeField] private ReactionController _reactionController;
     private TMP_Text _textField;
+    private int _score = 0;
 
     private void Start()
     {
         _textField = GetComponent<TMP_Text>();
-        _reactionController.OnTimeRefreshEventHandler += _reactionController_OnTimeRefreshEventHandler;
+        _reactionController.OnNucleeExploded += _reactionController_OnNucleeExploded;
     }
 
-    private void _reactionController_OnTimeRefreshEventHandler(object sender, ReactionController.OnTimeRefreshEventArgs e)
+    private void _reactionController_OnNucleeExploded(object sender, ReactionController.OnNucleeExplodedEventArgs e)
     {
-        _textField.text = e.Time.ToString("0.00");
+        _textField.text = e.Score.ToString();
     }
 }
