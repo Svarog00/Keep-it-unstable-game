@@ -19,6 +19,7 @@ public class ReactionController : MonoBehaviour
     [SerializeField] private float _time;
     private int _score;
     private float _curTime;
+    private float k = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class ReactionController : MonoBehaviour
     {
         if(_curTime > 0)
         {
-            _curTime -= Time.deltaTime;
+            _curTime -= Time.deltaTime * k;
             OnTimeRefreshEventHandler?.Invoke(this, new OnTimeRefreshEventArgs { Time = _curTime });
         }
         else
@@ -43,6 +44,11 @@ public class ReactionController : MonoBehaviour
     public void RefreshTimer(int mass)
     {
         _curTime += mass/3;
-        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = mass });    
+        _score += mass;
+        if(_score % 100 == 0)
+        {
+            k += 0.5f;
+        }
+        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = _score });    
     }
 }
