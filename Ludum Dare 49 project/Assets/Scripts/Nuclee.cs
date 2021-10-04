@@ -32,7 +32,11 @@ class Nuclee : MonoBehaviour, IPoolable
 
     public bool IsUnstable
     {
-        set => _isUnstable = value;
+        set
+        {
+            _isUnstable = value;
+            OnUnstableEventHandler?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public NucleeData NucleeData
@@ -110,10 +114,22 @@ class Nuclee : MonoBehaviour, IPoolable
         if(_isUnstable)
         {
             _isUnstable = false;
-            ReturnToPool();
+
+            if(_objectPool != null)
+            {
+                ReturnToPool();
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+
             GenerateParticles();
             CameraShake.Instance.ShakeCamera(_mass, 0.4f);
-            ReactionController.RefreshTimer(_mass);
+            if(ReactionController != null)
+            {
+                ReactionController.RefreshTimer(_mass);
+            }
             OnExplodeEventHandler?.Invoke(this, new OnExplodeEventArgs { NucleeMass = _mass });
         }
     }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MassType { Heavy = 0, Medium, Light }
+public enum MassType { Heavy, Medium, Light }
 
 public class NucleeView : MonoBehaviour
 {
@@ -23,27 +23,28 @@ public class NucleeView : MonoBehaviour
     {
         _nucleeModel = GetComponentInParent<Nuclee>();
         _nucleeModel.OnGrowEventHandler += _nucleeModel_OnGrowEventHandler;
+        _nucleeModel.OnUnstableEventHandler += _nuclee_OnUnstableEventHandler;
+
         _nucleeSprites = _nucleeModel.NucleeData;
         //Get animator variant
         _animator = GetComponent<Animator>();
         _curSprite = GetComponent<SpriteRenderer>();
+
     }
 
     void Start()
     {
-        _animator.Play(IDLE_ANIMATION, (int)_currMassType);
-        _nucleeModel.OnUnstableEventHandler += _nuclee_OnUnstableEventHandler;
-        _nucleeModel.OnGrowEventHandler += _nuclee_OnGrowEventHandler;
+        _animator.Play(IDLE_ANIMATION);
     }
 
     private void _nuclee_OnGrowEventHandler(object sender, System.EventArgs e)
     {
-        _animator.Play(GROW_ANIMATION, (int)_currMassType);
+        _animator.Play(GROW_ANIMATION + _currMassType.ToString());
     }
 
     private void _nuclee_OnUnstableEventHandler(object sender, System.EventArgs e)
     {
-        _animator.Play(UNSTABLE_ANIMATION, (int)_currMassType);
+        _animator.Play(UNSTABLE_ANIMATION + _currMassType.ToString());
     }
 
     private void _nucleeModel_OnGrowEventHandler(object sender, Nuclee.OnExplodeEventArgs e)

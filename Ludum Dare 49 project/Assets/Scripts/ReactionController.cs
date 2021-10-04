@@ -10,9 +10,14 @@ public class ReactionController : MonoBehaviour
     {
         public float Time;
     }
-    public event EventHandler OnNucleeExploded;
+    public event EventHandler<OnNucleeExplodedEventArgs> OnNucleeExploded;
+    public class OnNucleeExplodedEventArgs : EventArgs
+    {
+        public int Score;
+    }
 
     [SerializeField] private float _time;
+    private int _score;
     private float _curTime;
 
     // Start is called before the first frame update
@@ -38,6 +43,6 @@ public class ReactionController : MonoBehaviour
     public void RefreshTimer(int mass)
     {
         _curTime += mass/3;
-        OnNucleeExploded?.Invoke(this, EventArgs.Empty);
+        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = mass });    
     }
 }
