@@ -6,10 +6,13 @@ public class StartScreen : MonoBehaviour
 {
     [SerializeField] private GameObject _playField;
     private Nuclee _startNuclee;
+    [SerializeField] private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
+
         _startNuclee = GetComponentInChildren<Nuclee>();
         _startNuclee.IsUnstable = true;
         _playField.SetActive(false);
@@ -17,6 +20,11 @@ public class StartScreen : MonoBehaviour
     }
 
     private void _startNuclee_OnExplodeEventHandler(object sender, Nuclee.OnExplodeEventArgs e)
+    {
+        _animator.Play("StartScreenDisappear");
+    }
+
+    public void Disappear()
     {
         _playField.SetActive(true);
         gameObject.SetActive(false);

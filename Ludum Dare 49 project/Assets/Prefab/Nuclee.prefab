@@ -50,8 +50,8 @@ MonoBehaviour:
   _nucleeVariants: {fileID: 11400000, guid: 363f7a7cf3fd9b04f9ac1ffcb6c7d71e, type: 2}
   _particlePrefab: {fileID: 7846561045913553510, guid: bc6be8f1bb7d05b4da9f793bf4eef88b, type: 3}
   _isUnstable: 0
-  _mass: 5
-  _halfLifeTime: 2
+  _mass: 0
+  _halfLifeTime: 1.5
 --- !u!114 &5578047230653318303
 MonoBehaviour:
   m_ObjectHideFlags: 0

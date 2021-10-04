@@ -12,6 +12,12 @@ public class ScoreTextHandler : MonoBehaviour
     {
         _textField = GetComponent<TMP_Text>();
         _reactionController.OnNucleeExploded += _reactionController_OnNucleeExploded;
+        _reactionController.OnLoseEventHandler += _reactionController_OnLoseEventHandler;
+    }
+
+    private void _reactionController_OnLoseEventHandler(object sender, System.EventArgs e)
+    {
+        _textField.text = "";
     }
 
     private void _reactionController_OnNucleeExploded(object sender, ReactionController.OnNucleeExplodedEventArgs e)
