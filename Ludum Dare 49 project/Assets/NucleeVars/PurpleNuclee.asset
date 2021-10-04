@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 8876179390908006248, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
   - {fileID: 427967565369849261, guid: 79e6773a8fd7ea144948e3cd3a3c16f0, type: 3}
   _particlePrefab: {fileID: 7846561045913553510, guid: e038e28346b1cfc4599ef237b7cb11d6, type: 3}
+  _animatorPrefab: {fileID: 5936276600148317041, guid: be2d095b263cf4d43b799272182376e1, type: 3}

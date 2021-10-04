@@ -37,7 +37,7 @@ public class ReactionController : MonoBehaviour
 
     public void RefreshTimer(int mass)
     {
-        _curTime += mass/2;
+        _curTime += mass/3;
         OnNucleeExploded?.Invoke(this, EventArgs.Empty);
     }
 }
