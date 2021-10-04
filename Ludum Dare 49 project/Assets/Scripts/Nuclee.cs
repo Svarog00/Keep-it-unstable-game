@@ -137,7 +137,11 @@ class Nuclee : MonoBehaviour, IPoolable
 
     private void Grow()
     {
-        _mass++;
+        if(_mass < 31)
+        {
+            _mass++;
+        }
+
         if(!_isUnstable)
         {
             _curTime = _halfLifeTime;
