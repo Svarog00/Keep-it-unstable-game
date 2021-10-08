@@ -11,7 +11,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private ReactionController _reactionController;
 
     private int _count;
-    private float _timeCoeff;
+    private float _timeCoeff = 1;
     private float _curTime;
 
     private ObjectPool _objectPool;
@@ -24,6 +24,7 @@ public class SpawnController : MonoBehaviour
     private void Start()
     {
         _reactionController.OnNucleeExploded += _reactionController_OnNucleeExploded;
+        _reactionController.OnTimeCoeffUpEventHandler += _reactionController_OnTimeCoeffUpEventHandler;
 
         //Get screen borders
         _verticalUpBorder = Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y;
@@ -36,13 +37,17 @@ public class SpawnController : MonoBehaviour
         StartCoroutine(SpawnOnTime());
     }
 
+    private void _reactionController_OnTimeCoeffUpEventHandler(object sender, ReactionController.OnTimeCoeffUpEventHandlerEventArgs e)
+    {
+        _timeCoeff = e.TimeCoeff;
+    }
+
     private void _reactionController_OnNucleeExploded(object sender, ReactionController.OnNucleeExplodedEventArgs e)
     {
         if(_count < 40)
         {
             _count++;
         }
-        _timeCoeff = e.TimeCoeff;
     }
 
     private void Update()

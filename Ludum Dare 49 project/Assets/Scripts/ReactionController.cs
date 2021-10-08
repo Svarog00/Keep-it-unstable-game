@@ -10,13 +10,20 @@ public class ReactionController : MonoBehaviour
     {
         public float Time;
     }
+
     public event EventHandler<OnNucleeExplodedEventArgs> OnNucleeExploded;
     public class OnNucleeExplodedEventArgs : EventArgs
     {
         public int Score;
+    }
+
+    public event EventHandler OnLoseEventHandler;
+
+    public event EventHandler<OnTimeCoeffUpEventHandlerEventArgs> OnTimeCoeffUpEventHandler;
+    public class OnTimeCoeffUpEventHandlerEventArgs : EventArgs
+    {
         public float TimeCoeff;
     }
-    public event EventHandler OnLoseEventHandler;
 
 
     [SerializeField] private float _time;
@@ -51,11 +58,12 @@ public class ReactionController : MonoBehaviour
     {
         _curTime += mass/3;
         _curScore += mass;
-        if(_curScore > 100 || _curScore - _prevScore >= 100)
+        if(_curScore - _prevScore >= 100)
         {
             _prevScore = _curScore;
             _timeCoeff += _timeMultiplier;
+            OnTimeCoeffUpEventHandler?.Invoke(this, new OnTimeCoeffUpEventHandlerEventArgs { TimeCoeff = _timeCoeff });
         }
-        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = _curScore, TimeCoeff = _timeCoeff });    
+        OnNucleeExploded?.Invoke(this, new OnNucleeExplodedEventArgs { Score = _curScore });    
     }
 }
